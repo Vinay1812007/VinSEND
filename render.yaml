@@ -1,0 +1,43 @@
+# VinSEND on Render — free tier only.
+#
+# One free web service. No worker (Render's worker service is paid). The
+# webhook retry loop is driven by an external cron pinging /sweep on a
+# schedule — see RENDER-FREE.md for setup with cron-job.org / UptimeRobot.
+#
+# The same external cron also keeps the free instance warm (Render spins
+# down free web services after 15 min idle; a request every minute keeps
+# it hot).
+
+services:
+  - type: web
+    name: vinsend
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_URL
+        sync: false
+      - key: NEXT_PUBLIC_API_BASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_ENCRYPTION_KEY
+        sync: false
+      - key: API_KEY_PEPPER
+        sync: false
+      - key: WEBHOOK_USER_AGENT
+        value: VinSEND-Webhooks/1.0
+      - key: LOG_LEVEL
+        value: info

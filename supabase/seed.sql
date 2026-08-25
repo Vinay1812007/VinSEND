@@ -1,0 +1,3 @@
+-- VinSEND seed. Intentionally empty for production.
+-- For local development, sign up through the UI; onboarding creates an
+-- organization and first project.

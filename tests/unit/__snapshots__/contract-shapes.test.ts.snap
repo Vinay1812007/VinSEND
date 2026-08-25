@@ -1,0 +1,116 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`/v1 response contracts > GET /v1/emails (list) 1`] = `
+[
+  "data",
+  "has_more",
+]
+`;
+
+exports[`/v1 response contracts > GET /v1/emails (list) 2`] = `
+[
+  "created_at",
+  "from",
+  "id",
+  "status",
+  "subject",
+]
+`;
+
+exports[`/v1 response contracts > GET /v1/emails/:id (detail) 1`] = `
+[
+  "created_at",
+  "events",
+  "from",
+  "id",
+  "metadata",
+  "provider_message_id",
+  "recipients",
+  "status",
+  "subject",
+  "tags",
+]
+`;
+
+exports[`/v1 response contracts > GET /v1/emails/:id/events 1`] = `
+[
+  "data",
+  "email_id",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/api-keys 1`] = `
+[
+  "created_at",
+  "environment",
+  "id",
+  "name",
+  "prefix",
+  "scopes",
+  "secret",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/domains 1`] = `
+[
+  "domain",
+  "id",
+  "records",
+  "status",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/domains 2`] = `
+[
+  "host",
+  "notes",
+  "status",
+  "ttl",
+  "type",
+  "value",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/emails 1`] = `
+[
+  "created_at",
+  "id",
+  "status",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/emails/batch 1`] = `
+[
+  "failed",
+  "results",
+  "succeeded",
+  "total",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/emails/batch 2`] = `
+[
+  "id",
+  "index",
+  "ok",
+  "status",
+]
+`;
+
+exports[`/v1 response contracts > POST /v1/webhooks 1`] = `
+[
+  "created_at",
+  "events",
+  "id",
+  "signing_secret",
+  "url",
+]
+`;
+
+exports[`/v1 response contracts > error envelope 1`] = `
+[
+  "code",
+  "message",
+  "request_id",
+]
+`;
