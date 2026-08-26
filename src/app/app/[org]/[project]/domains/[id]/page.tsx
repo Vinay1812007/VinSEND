@@ -6,6 +6,7 @@ import { Tag, statusToTone } from '@/components/ui/tag'
 import { loadDashboardContext } from '@/server/services/current-context'
 import { findDomainWithRecords } from '@/server/services/domains'
 import { VerifyButton } from './verify-button'
+import { DownloadRecordsButton } from './download-records-button'
 
 export const dynamic = 'force-dynamic'
 
@@ -28,6 +29,15 @@ export default async function DomainDetailPage({
         action={
           <div className="flex items-center gap-3">
             <Tag tone={statusToTone(found.domain.status)}>{found.domain.status}</Tag>
+            <DownloadRecordsButton
+              domain={found.domain.domain}
+              records={found.records.map((r) => ({
+                type: r.type,
+                host: r.host,
+                expected_value: r.expected_value,
+                ttl: r.ttl,
+              }))}
+            />
             <VerifyButton
               orgSlug={ctx.org.slug}
               projectPublicId={ctx.project.public_id}
@@ -66,5 +76,6 @@ export default async function DomainDetailPage({
         </DataTable>
       </Card>
     </>
+  
   )
 }
