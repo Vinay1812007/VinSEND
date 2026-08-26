@@ -34,7 +34,7 @@ export function DashboardShell({
   userEmail: string
   children: React.ReactNode
 }) {
-  const base = \`/app/\${context.orgSlug}/\${context.projectPublicId}\`
+  const base = `/app/${context.orgSlug}/${context.projectPublicId}`
   return (
     <div className="grid min-h-screen grid-cols-[240px_1fr]">
       <aside className="border-r border-[color:var(--rule)] bg-[color:var(--sunk)] px-5 py-6 flex flex-col">
@@ -49,17 +49,17 @@ export function DashboardShell({
 
         <nav className="flex flex-col gap-[2px]">
           {NAV.map((item) => {
-            const href = \`\${base}/\${item.href}\`
+            const href = `${base}/${item.href}`
             const active = currentPath.startsWith(href)
             return (
               <Link
                 key={item.href}
                 href={href}
-                className={\`rounded px-3 py-1.5 text-sm transition-colors \${
+                className={`rounded px-3 py-1.5 text-sm transition-colors ${
                   active
                     ? 'bg-[color:var(--ground)] text-[color:var(--accent)] font-medium border border-[color:var(--rule)]'
                     : 'text-[color:var(--ink-2)] hover:bg-[color:var(--ground)] hover:text-[color:var(--ink)]'
-                }\`}
+                }`}
               >
                 {item.label}
               </Link>
@@ -93,7 +93,7 @@ export function PageHeader({
   action?: React.ReactNode
 }) {
   return (
-    <header className="mb-8 flex items-start justify-between gap-6 border-b border-[color:var(--rule)] pb-6">
+    <header className="mb-8 flex items-start justify-between gap-6 border-[color:var(--rule)] pb-6">
       <div>
         {eyebrow && (
           <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[color:var(--muted)]">
@@ -105,7 +105,4 @@ export function PageHeader({
         </h1>
         {description && <p className="mt-2 max-w-xl text-sm text-[color:var(--muted)]">{description}</p>}
       </div>
-      {action && <div className="shrink-0">{action}</div>}
-    </header>
-  )
-}
+    
