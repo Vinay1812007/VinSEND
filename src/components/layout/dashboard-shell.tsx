@@ -14,7 +14,6 @@ const NAV = [
   { href: 'emails', label: 'Emails' },
   { href: 'domains', label: 'Domains' },
   { href: 'api-keys', label: 'API Keys' },
-  { href: 'providers', label: 'Providers' },
   { href: 'templates', label: 'Templates' },
   { href: 'contacts', label: 'Contacts' },
   { href: 'suppressions', label: 'Suppressions' },
@@ -35,7 +34,7 @@ export function DashboardShell({
   userEmail: string
   children: React.ReactNode
 }) {
-  const base = `/app/${context.orgSlug}/${context.projectPublicId}`
+  const base = \`/app/\${context.orgSlug}/\${context.projectPublicId}\`
   return (
     <div className="grid min-h-screen grid-cols-[240px_1fr]">
       <aside className="border-r border-[color:var(--rule)] bg-[color:var(--sunk)] px-5 py-6 flex flex-col">
@@ -50,17 +49,17 @@ export function DashboardShell({
 
         <nav className="flex flex-col gap-[2px]">
           {NAV.map((item) => {
-            const href = `${base}/${item.href}`
+            const href = \`\${base}/\${item.href}\`
             const active = currentPath.startsWith(href)
             return (
               <Link
                 key={item.href}
                 href={href}
-                className={`rounded px-3 py-1.5 text-sm transition-colors ${
+                className={\`rounded px-3 py-1.5 text-sm transition-colors \${
                   active
                     ? 'bg-[color:var(--ground)] text-[color:var(--accent)] font-medium border border-[color:var(--rule)]'
                     : 'text-[color:var(--ink-2)] hover:bg-[color:var(--ground)] hover:text-[color:var(--ink)]'
-                }`}
+                }\`}
               >
                 {item.label}
               </Link>
