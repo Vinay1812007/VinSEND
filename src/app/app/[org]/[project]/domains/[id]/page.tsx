@@ -76,6 +76,6 @@ export default async function DomainDetailPage({
         </DataTable>
       </Card>
     </>
-  
   )
 }
+
