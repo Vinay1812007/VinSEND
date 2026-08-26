@@ -14,6 +14,7 @@ const NAV = [
   { href: 'emails', label: 'Emails' },
   { href: 'domains', label: 'Domains' },
   { href: 'api-keys', label: 'API Keys' },
+  { href: 'providers', label: 'SMTP' },
   { href: 'templates', label: 'Templates' },
   { href: 'contacts', label: 'Contacts' },
   { href: 'suppressions', label: 'Suppressions' },
