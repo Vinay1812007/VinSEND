@@ -93,7 +93,7 @@ export function PageHeader({
   action?: React.ReactNode
 }) {
   return (
-    <header className="mb-8 flex items-start justify-between gap-6 border-[color:var(--rule)] pb-6">
+    <header className="mb-8 flex items-start justify-between gap-6 border-b border-[color:var(--rule)] pb-6">
       <div>
         {eyebrow && (
           <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[color:var(--muted)]">
@@ -105,4 +105,8 @@ export function PageHeader({
         </h1>
         {description && <p className="mt-2 max-w-xl text-sm text-[color:var(--muted)]">{description}</p>}
       </div>
-    
+      {action && <div className="shrink-0">{action}</div>}
+    </header>
+  )
+}
+
